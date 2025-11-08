@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>All pages <span><input id="mainCheckbox" type="checkbox"></span></h1>
+        <div class="hr"><hr></div>
+        <ul>
+            <li>Page 1 <span><input class="childCheckbox" type="checkbox"></span></li>
+            <li>Page 2 <span><input class="childCheckbox" type="checkbox"></span></li>
+            <li>Page 3 <span><input class="childCheckbox" type="checkbox"></span></li>
+            <li>Page 4 <span><input class="childCheckbox" type="checkbox"></span></li>
+        </ul>
+        <div class="hr"><hr></div>
+        <div class="button">
+            <button>Done</button>
+        </div>
+    </div>
+
+    <script>
+        const main = document.getElementById('mainCheckbox');
+        const children = document.querySelectorAll('.childCheckbox');
+        
+        main.addEventListener('change', () => {
+          children.forEach(cb => cb.checked = main.checked);
+        });
+    </script>
+</body>
+</html>
